@@ -18,19 +18,25 @@ class Agent():
         return str(self)
     
     def move(self, xmin, xmax, ymin, ymax):
+        rn = random.random()
+        if rn < 0.5:
+            self.x = self.x + 1
+        else:
+            self.x = self.x - 1
         if self.x < xmin:
             self.x = xmin
+        elif self.x > xmax:
+            self.x = xmax
+        
+        rn = random.random()
+        if rn < 0.5:
+            self.y = self.y + 1
+        else:
+            self.y = self.y - 1
         if self.y < ymin:
             self.y = ymin
-        if self.x > xmax:
-            self.x = xmax
-        if self.y > ymax:
+        elif self.y > ymax:
             self.y = ymax
-        else:
-            if self.x >= (xmax + xmin)/2:
-                self.x -= 1
-            else:
-                self.x += 1
     
     def eat(self):
         if self.environment[self.y][self.x] >= 10:

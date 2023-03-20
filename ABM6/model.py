@@ -65,7 +65,8 @@ if __name__ == '__main__':
             plt.ylim(y_max / 3, y_max * 2 / 3)
             plt.xlim(x_max / 3, x_max * 2 / 3)
             plt.imshow(environment)
-            filename = 'C:/Users/dell/Desktop/leeds/GEOG5990M/ABM6/images' + str(item_number) + '.png'
+            filename = 'C:/Users/dell/Desktop/leeds/GEOG5990M/ABM6/images/' + str(item_number) + '.png'
+            item_number = item_number + 1
             plt.savefig(filename)
             plt.show()
             plt.close()

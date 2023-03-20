@@ -47,6 +47,8 @@ class Agent():
             self.y = ymin
         elif self.y > ymax:
             self.y = ymax
+
+        return self.x, self.y
     
     def eat(self):
         if self.environment[self.y][self.x] >= 10:

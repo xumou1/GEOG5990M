@@ -48,29 +48,29 @@ if __name__ == '__main__':
         print("Iteration", ite)
         # Move agents
         print("Move")
+        plt.scatter(agents[i].x, agents[i].y, color='black')
+        # Plot the coordinate with the largest x red
+        lx = max(agents, key=operator.attrgetter('x'))
+        plt.scatter(lx.x, lx.y, color='red')
+        # Plot the coordinate with the smallest x blue
+        sx = min(agents, key=operator.attrgetter('x'))
+        plt.scatter(sx.x, sx.y, color='blue')
+        # Plot the coordinate with the largest y yellow
+        ly = max(agents, key=operator.attrgetter('y'))
+        plt.scatter(ly.x, ly.y, color='yellow')
+        # Plot the coordinate with the smallest y green
+        sy = min(agents, key=operator.attrgetter('y'))
+        plt.scatter(sy.x, sy.y, color='green')
+        plt.ylim(y_max / 3, y_max * 2 / 3)
+        plt.xlim(x_max / 3, x_max * 2 / 3)
+        plt.imshow(environment)
+        filename = 'C:/Users/dell/Desktop/leeds/GEOG5990M/ABM6/images/' + str(item_number) + '.png'
+        item_number = item_number + 1
+        plt.savefig(filename)
+        plt.show()
+        plt.close()
+        images.append(imageio.imread(filename))
         for i in range(n_agents):
-            plt.scatter(agents[i].x, agents[i].y, color = 'black')
-            # Plot the coordinate with the largest x red
-            lx = max(agents, key=operator.attrgetter('x'))
-            plt.scatter(lx.x, lx.y, color='red')
-            # Plot the coordinate with the smallest x blue
-            sx = min(agents, key=operator.attrgetter('x'))
-            plt.scatter(sx.x, sx.y, color='blue')
-            # Plot the coordinate with the largest y yellow
-            ly = max(agents, key=operator.attrgetter('y'))
-            plt.scatter(ly.x, ly.y, color='yellow')
-            # Plot the coordinate with the smallest y green
-            sy = min(agents, key=operator.attrgetter('y'))
-            plt.scatter(sy.x, sy.y, color='green')
-            plt.ylim(y_max / 3, y_max * 2 / 3)
-            plt.xlim(x_max / 3, x_max * 2 / 3)
-            plt.imshow(environment)
-            filename = 'C:/Users/dell/Desktop/leeds/GEOG5990M/ABM6/images/' + str(item_number) + '.png'
-            item_number = item_number + 1
-            plt.savefig(filename)
-            plt.show()
-            plt.close()
-            images.append(imageio.imread(filename))
             agents[i].move(x_min, y_min, x_max, y_max)
             agents[i].eat()
             #print(agents[i])
@@ -92,6 +92,6 @@ if __name__ == '__main__':
         sum_e = sum_environment(environment)
         print("sum_environment", sum_e)
         print("total resource", (sum_as + sum_e))
-        # imageio.mimsave('C:/Users/dell/Desktop/leeds/GEOG5990M/ABM6/images/out.gif', images, fps=3)
+        imageio.mimsave('C:/Users/dell/Desktop/leeds/GEOG5990M/ABM6/images/out.gif', images, fps=3)
 
 

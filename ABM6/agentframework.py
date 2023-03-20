@@ -47,7 +47,11 @@ class Agent():
             self.y = ymin
         elif self.y > ymax:
             self.y = ymax
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 7f0af48e542e4f995a89757feabbe4cb93955c0c
         return self.x, self.y
     
     def eat(self):

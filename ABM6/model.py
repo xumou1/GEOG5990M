@@ -48,7 +48,8 @@ if __name__ == '__main__':
         print("Iteration", ite)
         # Move agents
         print("Move")
-        plt.scatter(agents[i].x, agents[i].y, color='black')
+        for i in range(n_agents):
+            plt.scatter(agents[i].x, agents[i].y, color='black')
         # Plot the coordinate with the largest x red
         lx = max(agents, key=operator.attrgetter('x'))
         plt.scatter(lx.x, lx.y, color='red')
@@ -71,7 +72,7 @@ if __name__ == '__main__':
         plt.close()
         images.append(imageio.imread(filename))
         for i in range(n_agents):
-            agents[i].move(x_min, y_min, x_max, y_max)
+            agents[i].move(x_min, x_max, y_min, y_max)
             agents[i].eat()
             #print(agents[i])
         # Share store

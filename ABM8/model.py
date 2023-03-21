@@ -59,7 +59,7 @@ def plot():
     plt.scatter(sy.x, sy.y, color='green')
     global item
     item = 0
-    filename = 'C:/Users/dell/Desktop/leeds/GEOG5990M/ABM6/images/' + str(item) + '.png'
+    filename = 'C:/Users/dell/Desktop/leeds/GEOG5990M/ABM8/images/' + str(item) + '.png'
     # item_number = ite + 1
     plt.savefig(filename)
     plt.show()
@@ -121,8 +121,8 @@ def gen_function():
     if data_written == False:
         # Write data
         print("write data")
-        io.write_data('C:/Users/dell/Desktop/leeds/GEOG5990M/ABM6/images/out7.txt', environment)
-        imageio.mimsave('C:/Users/dell/Desktop/leeds/GEOG5990M/ABM6/images/out7.gif', images, fps=3)
+        io.write_data('C:/Users/dell/Desktop/leeds/GEOG5990M/ABM8/images/out8.txt', environment)
+        imageio.mimsave('C:/Users/dell/Desktop/leeds/GEOG5990M/ABM8/images/out8.gif', images, fps=3)
         data_written = True
 
 def run(canvas):
@@ -139,7 +139,8 @@ def exiting():
     #sys.exit(0)
 
 def output():
-    io.write_data('C:/Users/dell/Desktop/leeds/GEOG5990M/ABM6/images/out7.txt', environment)
+    pass
+    # io.write_data('C:/Users/dell/Desktop/leeds/GEOG5990M/ABM8/images/out8.txt', environment)
 
 
 if __name__ == '__main__':
@@ -164,7 +165,7 @@ if __name__ == '__main__':
     images = []
     # Create directory to write images to.
     try:
-        os.makedirs('C:/Users/dell/Desktop/leeds/GEOG5990M/ABM6/images/')
+        os.makedirs('C:/Users/dell/Desktop/leeds/GEOG5990M/ABM8/images/')
     except FileExistsError:
         print("path exists")
 
@@ -198,7 +199,7 @@ if __name__ == '__main__':
         # Move agents
         print("Move")
         for i in range(n_agents):
-            agents[i].move(x_min, y_min, x_max, y_max)
+            agents[i].move(x_min, x_max, y_min, y_max)
             agents[i].eat()
             #print(agents[i])
         # Share store

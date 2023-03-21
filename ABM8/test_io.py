@@ -15,9 +15,9 @@ def read_data():
     n_rows, n_cols = np.shape(data)
     return data, n_rows, n_cols
 
-def write_data(self, filepath, environment):
-    file = open(filepath, 'a')
-    for env in environment:
-        line = ' '.join(str(element) for element in env)
-        file.write(line, '\n')
-    file.close()
+def write_data(address,data):
+    f = open(address, 'w', newline='')
+    writer = csv.writer(f, delimiter=',')
+    for row in data:
+        writer.writerow(row) # List of values.
+    f.close()

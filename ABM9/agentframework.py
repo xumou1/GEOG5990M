@@ -3,7 +3,7 @@ import random
 import geometry
 
 class Agent():
-    def __init__(self, agents, i, environment, n_rows, n_cols):
+    def __init__(self, agents, i, environment, n_rows, n_cols, x = None, y = None):
         '''
         :param agents:
         :param i:
@@ -14,10 +14,16 @@ class Agent():
         self.agents = agents
         self.i = i
         self.environment = environment
-        tnc = int(n_cols / 3)
-        self.x = random.randint(tnc - 1, (2 * tnc) - 1)
-        tnr = int(n_rows / 3)
-        self.y = random.randint(tnr - 1, (2 * tnr) - 1)
+        if x == None:
+            tnc = int(n_cols / 3)
+            self.x = random.randint(tnc - 1, (2 * tnc) - 1)
+        else:
+            self.x = x
+        if y == None:
+            tnr = int(n_rows / 3)
+            self.y = random.randint(tnr - 1, (2 * tnr) - 1)
+        else:
+            self.y = y
         self.store = random.randint(0, 99)
         self.store_shares = 0
     

@@ -18,31 +18,44 @@ The process from abm1 to abm9 was a continuous refinement of the simple ABM mode
 ![FlowChart](ABM.png "FlowChart")
 
 1. ABM1
+
 In this chapter, basic python experiments were conducted to initially complete simple python code
 
-3. ABM2
+1. ABM2
+
 In this chapter, the ABM1 code is used as a basis for the unified management of target points through lists and the initial mapping is done using a third-party library
 
-5. ABM3
+1. ABM3
+
 In this chapter, the function to get the distance is encapsulated in a function, the function to get the maximum and minimum values is added, the function to calculate the time is done by calling a third-party library, and the function to make the point move is done initially at the end.
 
-7. ABM4
+1. ABM4
+
 The most significant work in this chapter is the redefinition of the initialization logic and the creation of a class to do the initialization of the points
 
-9. ABM5
+1. ABM5
+
 In this chapter the environmental elements of the model itself are refined, the environment is loaded by reading existing data, and a certain degree of interaction with the environment is accomplished
 
-11. ABM6
+1.  ABM6
+
 From this section onwards, the focus shifts from functional refinement to visual form. In ABM6, the definition of the previous classes was refined and the results were integrated into gifs
 
-13. ABM7
+1.  ABM7
+
 In this chapter, the original results are shown in the form of animations and the function stopping conditions are redefined
 
-15. ABM8
+1.  ABM8
+
 In this chapter, the basic GUI section is added to the previous code
 
-17. ABM9
+1.  ABM9
+
 Building on the previous section, the data source was further extended by using a crawler method to fetch the point data from the web page
+
+1.  Streamlit
+
+This test attempts to build a visual demonstration of the ABM model using python's streamlit library
 
 ### Acknowledgments
 I would like to thank Dr. Andy Turner, the course instructor, for providing the materials and lectures for this course.

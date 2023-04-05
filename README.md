@@ -57,6 +57,23 @@ Building on the previous section, the data source was further extended by using 
 
 This test attempts to build a visual demonstration of the ABM model using python's streamlit library
 
+### Usage(For streamlit)
+```python
+# Install streamlit first
+pip install streamlit
+
+# (if it error use)
+pip install streamlit --user
+
+# After git clone the repositories
+cd ../GEOG5990M/Streamlit
+
+# Run streamlit app
+streamlit run streamlit_ABM.py
+# Sometimes it not work use
+python -m streamlit run streamlit_ABM.py
+```
+
 ### Acknowledgments
 I would like to thank Dr. Andy Turner, the course instructor, for providing the materials and lectures for this course.
 
